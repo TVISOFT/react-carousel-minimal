@@ -11,6 +11,7 @@ function Carousel({
   slideNumberStyle,
   radius,
   slideNumber,
+  onClick,
   style,
   captionPosition,
   dots,
@@ -135,6 +136,7 @@ function Carousel({
             {data.map((item, index) => {
               return (
                 <div
+                
                   className="carousel-item fade"
                   style={{
                     maxWidth: width ? width : "600px",
@@ -162,6 +164,7 @@ function Carousel({
                       {index + 1} / {data.length}
                     </div>
                   )}
+                <a target="_blank" rel="noopener noreferrer nofollow" href={item.image}>
                   <img
                     src={item.image}
                     alt={item.caption}
@@ -171,6 +174,7 @@ function Carousel({
                       objectFit: slideImageFit ? slideImageFit : "cover",
                     }}
                   />
+                  </a>
                   {isPaused && (
                     <div
                       className="pause-icon pause"

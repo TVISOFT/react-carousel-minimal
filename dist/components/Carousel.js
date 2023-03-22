@@ -33,6 +33,7 @@ function Carousel(_ref) {
     slideNumberStyle,
     radius,
     slideNumber,
+    onClick,
     style,
     captionPosition,
     dots,
@@ -170,7 +171,11 @@ function Carousel(_ref) {
     }, slideNumber && /*#__PURE__*/_react.default.createElement("div", {
       className: "slide-number",
       style: slideNumberStyle
-    }, index + 1, " / ", data.length), /*#__PURE__*/_react.default.createElement("img", {
+    }, index + 1, " / ", data.length), /*#__PURE__*/_react.default.createElement("a", {
+      target: "_blank",
+      rel: "noopener noreferrer nofollow",
+      href: item.image
+    }, /*#__PURE__*/_react.default.createElement("img", {
       src: item.image,
       alt: item.caption,
       className: "carousel-image",
@@ -178,7 +183,7 @@ function Carousel(_ref) {
         borderRadius: radius,
         objectFit: slideImageFit ? slideImageFit : "cover"
       }
-    }), isPaused && /*#__PURE__*/_react.default.createElement("div", {
+    })), isPaused && /*#__PURE__*/_react.default.createElement("div", {
       className: "pause-icon pause",
       style: {
         color: pauseIconColor ? pauseIconColor : "white",
